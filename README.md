@@ -1,2 +1,2 @@
-# RNA_seq
+# RNA_seq differential expression
 RNA_seq differential expression
