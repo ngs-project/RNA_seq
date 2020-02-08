@@ -125,7 +125,7 @@ https://github.com/ngs-project/RNA_seq/blob/master/simple_counts.txt
 
 # Analyze the counts with DESeq1.
 cat simple_counts.txt | Rscript deseq1.r 3x3 > results_deseq1.tsv
-
+https://github.com/ngs-project/RNA_seq/blob/master/results_deseq1.tsv
 
 DeSEQ1 Output header description
 
