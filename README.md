@@ -45,11 +45,11 @@ conda install -c bioconda multiqc
 
 conda install sra-toolkit\
 
-#conda install samtools
+ #conda install samtools
 
 conda install -c bioconda -y hisat2
 
-#conda install kallisto
+ #conda install kallisto
 
 # install r and dependicies
 conda install r
