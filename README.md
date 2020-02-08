@@ -35,8 +35,6 @@ Direct download from NCBI
 Trying to get subset from the net 
 Wget airway package 
 
-
-
  # Setup enviornemnt
 
 Conda activate ngs1
@@ -122,7 +120,7 @@ featureCounts -a $GTF -g gene_name -o counts.txt  bam/TTT*.bam  bam/UNT*.bam
 # Simplify the file to keep only the count columns.
 cat counts.txt | cut -f 1,7-12 > simple_counts.txt
 #Head
-
+https://github.com/ngs-project/RNA_seq/blob/master/simple_counts.txt
 
 
 
