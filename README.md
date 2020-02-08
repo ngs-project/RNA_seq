@@ -24,9 +24,7 @@ Direct download from NCBI
 
 #Using SRA-toolkit 
 
-  Prefetch SRR1039508
-
-Then fast_dump
+  Prefetch SRR103950
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip SRR1039508
   prefetch SRR1039509
   fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip SRR1039509
