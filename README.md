@@ -39,11 +39,9 @@ Wget airway package
 
 
 
- # Installation 
+ # Setup enviornemnt
 
 Conda activate ngs1
-
-conda activate ngs1
 
 conda install -c bioconda fastqc 
 
@@ -51,12 +49,34 @@ conda install -c bioconda multiqc
 
 Conda install sra-toolkit\
 
-Conda install samtools
+#Conda install samtools
 
 Conda install -c bioconda -y hisat2
 
-Conda install kallisto
+#Conda install kallisto
+
+# install r and dependicies
+conda install r
+conda install -y bioconductor-deseq r-gplots
 
  
 
 Got the bam files 
+
+
+
+# Analyzing control samples
+# Alignment: Hisat2
+
+# Step 1 (Indexing)
+
+INDEX=./gencode.v33.transcripts
+
+REF= ./gencode.v33.transcripts.fa
+
+# Step 2 (Alignment)
+
+hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv gencode.v33.transcripts.fa gencode.v33.transcripts
+ REF_ERCC=./ref/ERCC92.fa
+
+hisat2-build $REF $INDEX
