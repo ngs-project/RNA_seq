@@ -149,7 +149,7 @@ Check the Alignment summary.
 
 # Step 3 (Quantification)
 
-GTF=~/Downloads/fastqq/fastq/fastg/
+GTF=~/Downloads/fastqq/fastq/fastg/gencode.v33.transcripts.gtf
 
 # Generate the counts.
 featureCounts -a $GTF -g gene_name -o counts.txt  bam/TTT*.bam  bam/UNT*.bam
