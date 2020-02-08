@@ -72,7 +72,6 @@ INDEX=./gencode.v33.transcripts
 
 REF= ./gencode.v33.transcripts.fa
 
-# Step 2 (Alignment)
 
 hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv gencode.v33.transcripts.fa gencode.v33.transcripts
  REF_ERCC=./ref/ERCC92.fa
@@ -80,15 +79,29 @@ hisat2-build -p 1 --ss splicesites.tsv --exon exons.tsv gencode.v33.transcripts.
 hisat2-build $REF $INDEX
 
 
+# Step 2 (Alignment)
 
 RUNLOG=runlog.txt
 READS_DIR=~/Downloads/fastqq/fastq/fastg/
 mkdir bam
-
+# align both reads for treated and untreated conditions
 
 for SAMPLE in UNT;
 do
     for REPLICATE in 12 16 20;
+    do
+        R1=$READS_DIR/${SAMPLE}_Rep${REPLICATE}*pass_1.fastq.gz
+        R2=$READS_DIR/${SAMPLE}_Rep${REPLICATE}*pass_2.fastq.gz
+        BAM=bam/${SAMPLE}_${REPLICATE}.bam
+
+        hisat2 $INDEX -1 $R1 -2 $R2 | samtools sort > $BAM
+        samtools index $BAM
+    done
+done
+
+for SAMPLE in TTT;
+do
+    for REPLICATE in 13 17 21;
     do
         R1=$READS_DIR/${SAMPLE}_Rep${REPLICATE}*pass_1.fastq.gz
         R2=$READS_DIR/${SAMPLE}_Rep${REPLICATE}*pass_2.fastq.gz
