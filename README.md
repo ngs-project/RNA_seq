@@ -37,4 +37,26 @@ Then fast_dump
 Trying to get subset from the net 
 Wget airway package 
 
+
+
+ # Installation 
+
+Conda activate ngs1
+
+conda activate ngs1
+
+conda install -c bioconda fastqc 
+
+conda install -c bioconda multiqc
+
+Conda install sra-toolkit\
+
+Conda install samtools
+
+Conda install -c bioconda -y hisat2
+
+Conda install kallisto
+
+ 
+
 Got the bam files 
