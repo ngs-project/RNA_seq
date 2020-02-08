@@ -9,12 +9,12 @@ Download the reference genome from Ensembl and use the human GRCh38 version of t
  conda create -y --name ngs1 python=3.6
 
 # Data Retrieval
+NCBI’s fastq-dump from sra-toolkit was used to download the short reads for NCBI short read archive (SRA). 
 
  cd ~/workdir/sample_data
 
  fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 -N 10000 -X 4010000    --clip SRR1039520
 
-NCBI’s fastq-dump from sra-toolkit was used to download the short reads for NCBI short read archive (SRA). 
 
 # Data Retrieval(past troubleshooting)
 
