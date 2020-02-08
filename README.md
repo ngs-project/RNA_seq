@@ -111,6 +111,7 @@ do
         samtools index $BAM
     done
 done
+
 # Step 3 (Quantification)
 
 GTF=~/Downloads/fastqq/fastq/fastg/
