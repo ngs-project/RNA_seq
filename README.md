@@ -123,6 +123,26 @@ cat counts.txt | cut -f 1,7-12 > simple_counts.txt
 https://github.com/ngs-project/RNA_seq/blob/master/simple_counts.txt
 
 
+# Analyze the counts with DESeq1.
+cat simple_counts.txt | Rscript deseq1.r 3x3 > results_deseq1.tsv
+
+
+DeSEQ1 Output header description
+
+    id: Gene or transcript name that the differential expression is computed for,
+    baseMean: The average normalized value across all samples,
+    baseMeanA, baseMeanB: The average normalized gene expression for each condition,
+    foldChange: The ratio baseMeanB/baseMeanA ,
+    log2FoldChange: log2 transform of foldChange . When we apply a 2-based logarithm the values become symmetrical around 0. A log2 fold change of 1 means a doubling of the expression level, a log2 fold change of -1 shows show a halving of the expression level.
+    pval: The probability that this effect is observed by chance,
+    padj: The adjusted probability that this effect is observed by chance.
+
+View only rows with pval < 0.05
+
+cat results_deseq1.tsv | awk ' $8 < 0.05 { print $0 }' > filtered_results_deseq1.tsv
+cat filtered_results_deseq1.tsv | Rscript draw-heatmap.r > hisat_output.pdf
+
+
 
 
 
