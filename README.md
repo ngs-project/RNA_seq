@@ -97,6 +97,23 @@ do
     done
 done
 
+Check the Alignment summary.
+4000001 reads; of these:
+  4000001 (100.00%) were paired; of these:
+    656023 (16.40%) aligned concordantly 0 times
+    894885 (22.37%) aligned concordantly exactly 1 time
+    2449093 (61.23%) aligned concordantly >1 times
+    ----
+    656023 pairs aligned concordantly 0 times; of these:
+      6338 (0.97%) aligned discordantly 1 time
+    ----
+    649685 pairs aligned 0 times concordantly or discordantly; of these:
+      1299370 mates make up the pairs; of these:
+        1107153 (85.21%) aligned 0 times
+        61740 (4.75%) aligned exactly 1 time
+        130477 (10.04%) aligned >1 times
+86.16% overall alignment rate
+
 for SAMPLE in TTT;
 do
     for REPLICATE in 13 17 21;
@@ -109,6 +126,26 @@ do
         samtools index $BAM
     done
 done
+
+Check the Alignment summary.
+4000001 reads; of these:
+  4000001 (100.00%) were paired; of these:
+    644104 (16.10%) aligned concordantly 0 times
+    925147 (23.13%) aligned concordantly exactly 1 time
+    2430750 (60.77%) aligned concordantly >1 times
+    ----
+    644104 pairs aligned concordantly 0 times; of these:
+      6320 (0.98%) aligned discordantly 1 time
+    ----
+    637784 pairs aligned 0 times concordantly or discordantly; of these:
+      1275568 mates make up the pairs; of these:
+        1061485 (83.22%) aligned 0 times
+        66172 (5.19%) aligned exactly 1 time
+        147911 (11.60%) aligned >1 times
+86.73% overall alignment rate
+
+
+
 
 # Step 3 (Quantification)
 
