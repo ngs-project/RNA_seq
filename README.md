@@ -149,15 +149,26 @@ Check the Alignment summary.
 
 # Step 3 (Quantification)
 
-GTF=~/Downloads/fastqq/fastq/fastg/gencode.v33.transcripts.gtf
+GTF=~/Downloads/fastqq/fastq/fastg/gencode.v33.transcripts.annotation.gtf 
+
 
 # Generate the counts.
-featureCounts -a $GTF -g gene_name -o counts.txt  bam/TTT*.bam  bam/UNT*.bam
+featureCounts -a $GTF -g gene_name -o counts.txt  bam/UNT*.bam  bam/TTThe chromosome name of "ENST00000456328.2|ENSG00000223972.5|OTTHUMG00000000961.2|OTTHUMT00000362751.1|DDX11L1-202|DDX11L1|1657|processed_transcript|" contains 125 characters, longer than the upper limit of 99
+featureCounts has to stop runningT*.bam
 
 # Simplify the file to keep only the count columns.
 cat counts.txt | cut -f 1,7-12 > simple_counts.txt
 #Head
 https://github.com/ngs-project/RNA_seq/blob/master/simple_counts.txt
+
+
+The chromosome name of "ENST00000456328.2|ENSG00000223972.5|OTTHUMG00000000961.2|OTTHUMT00000362751.1|DDX11L1-202|DDX11L1|1657|processed_transcript|" contains 125 characters, longer than the upper limit of 99
+featureCounts has to stop running
+||                                                                            ||
+||    format error found in this file!                                        ||
+
+FATAL Error: The program has to terminate and no counting file is generated.
+
 
 
 # Analyze the counts with DESeq1.
