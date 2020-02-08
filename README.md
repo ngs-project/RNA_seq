@@ -37,19 +37,19 @@ Wget airway package
 
  # Setup enviornemnt
 
-Conda activate ngs1
+conda activate ngs1
 
 conda install -c bioconda fastqc 
 
 conda install -c bioconda multiqc
 
-Conda install sra-toolkit\
+conda install sra-toolkit\
 
-#Conda install samtools
+#conda install samtools
 
-Conda install -c bioconda -y hisat2
+conda install -c bioconda -y hisat2
 
-#Conda install kallisto
+#conda install kallisto
 
 # install r and dependicies
 conda install r
